@@ -17,7 +17,7 @@ function Contact() {
         </p>
 
         <a
-          href="mailto:your.email@example.com"
+          href="mailto:fer.bonilla.cruz@gmail.com"
           className="mt-8 inline-block rounded-lg bg-white px-6 py-3 font-semibold text-slate-950 transition hover:bg-slate-200"
         >
           Send me an email
