@@ -11,7 +11,7 @@ function Contact() {
           Let's work together
         </h2>
 
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-400">
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-900">
           I'm currently open to new opportunities and interesting software
           projects. Feel free to reach out.
         </p>
