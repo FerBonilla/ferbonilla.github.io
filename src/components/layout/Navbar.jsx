@@ -1,6 +1,18 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import i18n from '../../i18n/config'
 
 function Navbar() {
+  const { t } = useTranslation()
+
+  const changeLanguage = () => {
+    const newLanguage = i18n.language === 'en' ? 'es' : 'en'
+
+    i18n.changeLanguage(newLanguage)
+
+    localStorage.setItem('language', newLanguage)
+  }
+
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const closeMenu = () => {
@@ -23,24 +35,33 @@ function Navbar() {
           {/* Desktop menu */}
           <div className="hidden gap-6 text-sm text-slate-400 sm:flex">
             <a href="#about" className="transition hover:text-white">
-              About
+              {t('navigation.about')}
             </a>
 
             <a href="#skills" className="transition hover:text-white">
-              Skills
+              {t('navigation.skills')}
             </a>
 
             <a href="#projects" className="transition hover:text-white">
-              Projects
+              {t('navigation.projects')}
             </a>
 
             <a href="#experience" className="transition hover:text-white">
-              Experience
+              {t('navigation.experience')}
             </a>
 
             <a href="#contact" className="transition hover:text-white">
-              Contact
+              {t('navigation.contact')}
             </a>
+
+            <button
+              type="button"
+              onClick={changeLanguage}
+              className="rounded-md border border-slate-700 px-3 py-1.5 font-medium text-slate-300 transition hover:border-slate-500 hover:text-white"
+              aria-label="Change language"
+            >
+              {i18n.language === 'en' ? '🇲🇽 ES' : '🇺🇸 EN'}
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -63,7 +84,7 @@ function Navbar() {
               onClick={closeMenu}
               className="text-slate-400 transition hover:text-white"
             >
-              About
+              {t('navigation.about')}
             </a>
 
             <a
@@ -71,7 +92,7 @@ function Navbar() {
               onClick={closeMenu}
               className="text-slate-400 transition hover:text-white"
             >
-              Skills
+              {t('navigation.skills')}
             </a>
 
             <a
@@ -79,7 +100,7 @@ function Navbar() {
               onClick={closeMenu}
               className="text-slate-400 transition hover:text-white"
             >
-              Projects
+              {t('navigation.projects')}
             </a>
 
             <a
@@ -87,7 +108,7 @@ function Navbar() {
               onClick={closeMenu}
               className="text-slate-400 transition hover:text-white"
             >
-              Experience
+              {t('navigation.experience')}
             </a>
 
             <a
@@ -95,8 +116,16 @@ function Navbar() {
               onClick={closeMenu}
               className="text-slate-400 transition hover:text-white"
             >
-              Contact
+              {t('navigation.contact')}
             </a>
+
+            <button
+              type="button"
+              onClick={changeLanguage}
+              className="self-start rounded-md border border-slate-700 px-3 py-1.5 font-medium text-slate-300 transition hover:border-slate-500 hover:text-white"
+            >
+              {i18n.language === 'en' ? '🇲🇽 ES' : '🇺🇸 EN'}
+            </button>
           </div>
         )}
 

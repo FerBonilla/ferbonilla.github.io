@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 const skills = [
   'Java',
   'Spring Boot',
@@ -23,12 +25,15 @@ const skills = [
 ]
 
 function Skills() {
+
+  const { t } = useTranslation()
+
   return (
     <section id="skills" className="bg-slate-900 px-6 py-24">
       <div className="mx-auto max-w-4xl">
 
         <h2 className="text-white text-3xl font-bold sm:text-4xl">
-          Skills
+          {t('skills.title')}
         </h2>
 
         <div className="mt-8 flex flex-wrap gap-3">

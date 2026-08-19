@@ -1,25 +1,27 @@
+import { useTranslation } from 'react-i18next'
+
 function About() {
+
+const { t } = useTranslation()
+
   return (
     <section id="about" className="px-6 py-24">
       <div className="mx-auto max-w-4xl">
         <h2 className="text-3xl font-bold sm:text-4xl">
-          About me
+          {t('about.label')}
         </h2>
 
         <div className="mt-8 space-y-4 text-lg leading-8 text-bg-slate-900">
           <p>
-            I'm a Senior Java Backend Developer focused on building
-            reliable and maintainable software.
+            {t('about.paragraph1')}
           </p>
 
           <p>
-            I have experience designing backend applications with Java,
-            Spring Boot, REST APIs, databases and authentication systems.
+            {t('about.paragraph2')}
           </p>
 
           <p>
-            I'm currently expanding my frontend skills with React and
-            modern web technologies.
+            {t('about.paragraph3')}
           </p>
         </div>
       </div>
